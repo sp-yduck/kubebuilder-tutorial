@@ -1,0 +1,12 @@
+make: Entering directory `/Users/teppei.sudo/projects/guestbook'
+mkdir -p /Users/teppei.sudo/projects/guestbook/bin
+ 
+GOBIN=/Users/teppei.sudo/projects/guestbook/bin go install sigs.k8s.io/controller-tools/cmd/controller-gen@v0.8.0
+ 
+/Users/teppei.sudo/projects/guestbook/bin/controller-gen object:headerFile="hack/boilerplate.go.txt" paths="./..."
+ 
+go fmt ./...
+go vet ./...
+go build -o bin/manager main.go
+make: Leaving directory `/Users/teppei.sudo/projects/guestbook'
+ 
